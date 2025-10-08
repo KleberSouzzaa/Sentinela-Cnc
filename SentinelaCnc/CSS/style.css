@@ -1,0 +1,91 @@
+/*
+  Este é nosso arquivo de estilos.
+  Aqui definimos a aparência do nosso app, usando as cores que discutimos.
+*/
+
+/* 1. Definindo nossa paleta de cores como variáveis globais */
+:root {
+    --cor-fundo-principal: #1a202c;     /* Azul Marinho Escuro */
+  --cor-fundo-secundario: #2d3748; /* Cinza Chumbo */
+  --cor-texto-principal: #e2e8f0;    /* Cinza Claro */
+  --cor-texto-secundario: #a0aec0; /* Cinza Médio */
+  --cor-destaque: #3182ce;         /* Azul Sentinela */
+  --cor-destaque-hover: #2b6cb0;   /* Azul Sentinela (mais escuro para hover) */
+}
+
+/* 2. Estulos gerais para o corpo da página */
+body { 
+    font-family: 'Roboto', sans-serif; /* Fonte moderna e legível */
+    background-color: var(--cor-fundo-principal); /* Fundo azul marinho escuro */
+    color: var(--cor-texto-principal); /* Texto cinza claro */
+    margin: 0; 
+}
+
+/* 3. Estilizando nosso card de login personalizado */
+.login-card {
+  background-color: var(--cor-fundo-secundario);
+  border-radius: 15px; /* Bordas arredondadas */
+  width: 100%; /* Largura total para telas pequenas */
+  max-width: 450px; /* Largura máxima para telas maiores */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Sombra suave */
+  border: 1px solid #4a5568; /* Borda cinza escuro */
+}
+
+/* 4. Estilizando o título principal (H1) */
+.login-card h1 {
+  color: var(--cor-destaque); /* Azul Sentinela */
+  font-size: 2.5rem; /* Tamanho maior para destaque */
+  margin-bottom: 0px; /* Espaçamento abaixo do título */
+}
+
+/* 5. Sobreescrenvdo estilos do Boorstrap para melhor contraste  */
+.text-muted {
+  color: var(--cor-texto-secundario) !important; /* Cinza médio */
+}
+
+/* 6. Personalizando os campos do formulário (inputs) */
+.form-control {
+  background-color: var(--cor-fundo-principal); /* Fundo azul marinho escuro */
+  color: var(--cor-texto-principal); /* Texto cinza claro */
+  border: 1px solid #4a5568; /* Borda cinza escuro */
+  padding: 0.75rem 1rem; /* Espaçamento interno */
+}
+
+/* Estilo para o placeholder (texto de dica dentro do input) */
+.form-control::placeholder {
+  color: var(--cor-texto-secundario); /* Cinza médio */
+}
+
+/* Estilo do input quando está focado (clicando) */
+.form-control:focus {
+  background-color: var(--cor-fundo-principal); /* Mantém o fundo */
+  color: var(--cor-texto-principal); /* Mantém o texto */
+  border-color: var(--cor-destaque); /* Borda azul Sentinela */
+  /* box-shadow simula o "brilho" ao redor do campo */
+  box-shadow: 0 0 0 0.25rem rgba(49, 130, 206, 0.25);
+}
+
+/* 7. Personalizando o botão principal */
+.btn-primary {
+  background-color: var(--cor-destaque); /* Azul Sentinela */
+  border-color: var(--cor-destaque); /* Borda azul Sentinela */
+  padding: 0.75rem; /* Espaçamento interno */
+  transition: background-color 0.2s ease-in-out; /* Transição suave */
+}
+
+/* Efeito do botão ao passar o mouse por cima */
+.btn-primary:hover {
+  background-color: var(--cor-destaque-hover); /* Azul Sentinela mais escuro */
+  border-color: var(--cor-destaque-hover); /* Borda azul Sentinela mais escuro */
+}
+
+/* 8. Estilizando todos os links */
+a {
+  color: var(--cor-destaque);
+  text-decoration: none; /* Remove o sublinhado padrão */
+}
+
+a:hover {
+  color: var(--cor-destaque-hover);
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
