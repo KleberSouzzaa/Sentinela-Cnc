@@ -89,3 +89,28 @@ a:hover {
   color: var(--cor-destaque-hover);
   text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
+
+/* 9. MUDANÇA: Esilos para o ícone de visualizr senha */
+#togglePassword {
+  /* Posiciona o ícone dentro do seu container (.position-relative) */
+  right: 15px;      /* 15px da borda direita */
+  top: 50%;         /* Desce o ícone até a metade da altura */
+  transform: translateY(-50%); /* Centraliza verticalmente de forma precisa */
+  cursor: pointer;    /* Muda o cursor para uma "mãozinha", indicando que é clicável */
+  color: var(--cor-texto-secundario);
+  /* NOVO: Esconde o ícone por padrão e adiciona transição suave */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+/* NOVO: Classe para tornar o ícone visível via JavaScript */
+#togglePassword.is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Adiciona espaço à direita no campo de senha para o texto não sobrepor o ícone */
+#password {
+  padding-right: 2.75rem; 
+}
