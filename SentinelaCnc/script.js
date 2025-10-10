@@ -2,6 +2,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
+// Linha 5: Adicionado para debug
+console.log("✅ Script.js carregado com sucesso!");
+
 // 2. CONFIGURAÇÕES DO FIREBASE - Substitua pelos seus dados
 //========================================================================================================
 const firebaseConfig = {
@@ -18,17 +21,23 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+// Linha 25: Adicionado para debug
+console.log("🔥 Firebase Auth inicializado:", auth);
+
 
 // 4. LÓGICA DA PÁGINA DE LOGIN: Aguardar o carregamento do HTML
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Linha 31: Adicionado para debug
+     console.log("📄 DOM completamente carregado. Os eventos de clique e digitação estão ativos.");
+
     // Selecionando os elementos do formulário
-    const loginForm = document.querySelector('loginForm');
+    const loginForm = document.querySelector('#loginForm');
     const emailInput = document.querySelector('#email');
     const passwordInput = document.querySelector('#password');
     const createAccountLink = document.querySelector('#createAccountLink');
     const messageDiv = document.querySelector('#message');
-})
+
     // Função para exibir mensagens ao usuário
     const showMessage = (message, type = 'danger') => {
         messageDiv.textContent = message;
@@ -47,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then((userCredential) => {
             // Login bem-sucedido
             const user = userCredential.user;
-            showMessage('Login bem-sucedido! Bem-vindo, ${user.email}', 'success');
+            showMessage(`Login bem-sucedido! Bem-vindo, ${user.email}`, 'success');
             // Aqui você redirecionaria o usuário para o dachboard ou página principal
             // window.location.href = 'dashboard.html';
         })
@@ -56,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showMessage( 'E-mail ou senha inválidos. Tente novamente.');
             console.error("Erro de login:", error.message);
         });
-    })
+    });
 
     // Evento de CLIQUE no link "Criar Conta"
     createAccountLink.addEventListener('click', (e) => {
@@ -74,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                showMessage('Conta criada com sucesso para ${user.email}! Você já pode fazer o login.', 'success');
+                showMessage(`Conta criada com sucesso para ${user.email}!`, 'Você já pode fazer o login.', 'success');
         })
         .catch((error) => {
             //trata os erros de criação de conta
@@ -108,3 +117,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+}); 
