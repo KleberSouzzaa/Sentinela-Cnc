@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             console.error("Erro ao criar conta:", error.message);
         });
-    
+    });
         
         // --- Lógica para mostrar/ocultar o ícone de senha ---
     const togglePassword = document.querySelector('#togglePassword');
@@ -117,4 +117,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
-}); 
