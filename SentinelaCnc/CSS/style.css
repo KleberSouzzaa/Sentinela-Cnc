@@ -114,3 +114,79 @@ a:hover {
 #password {
   padding-right: 2.75rem; 
 }
+
+/* ==================================================================
+10. ESTILOS PARA O LAYOUT DO DASHBOARD
+=================================================================== */
+
+.dashboard-layout {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+} 
+
+/* --- Estilos do Menu Lateral (Sidebar) --- */
+.sidebar {
+  width: 260px;
+  background-color: var(--cor-fundo-secundario);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+}
+
+.sidebar-header h2 {
+color: var(--cor-texto-principal);
+font-size: 1.5rem;
+text-align: center;
+margin-bottom: 2rem;
+}
+
+.sidebar .nav-link {
+  color: var(--cor-texto-secundario);
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--cor-texto-principal);
+}
+
+.sidebar .navi-link.active {
+  background-color: var(--cor-destaque);
+  color: white;
+  font-weight: bold;
+}
+
+.sidebar-footer{
+  margin-top: auto; /* Empurra o footer "rodapé" para o final */
+}
+
+/* --- Estilos do Conteúdo Principal --- */
+.main-content {
+  flex-grow: 1; /* Faz ocupar todo o espaço restante */
+  background-color: var(--cor-fundo-principal);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Permite rolagem vertical se o conteúdo for maior que a tela */
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between; /* Espaço entre os itens */
+  align-items: center; /* Alinha verticalmente ao centro */
+  padding: 1.5rem 2rem;
+  background-color: var(--cor-fundo-secundario);
+  border-bottom: 1px solid #4a5568; /* Linha sutil abaixo do header */
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Espaçamento entre os itens */
+}
