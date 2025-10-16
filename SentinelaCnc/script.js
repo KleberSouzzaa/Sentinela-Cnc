@@ -60,8 +60,14 @@ document.addEventListener('DOMContentLoaded', () => {
             // Login bem-sucedido
             const user = userCredential.user;
             showMessage(`Login bem-sucedido! Bem-vindo, ${user.email}`, 'success');
-            // Aqui você redirecionaria o usuário para o dachboard ou página principal
-            // window.location.href = 'dashboard.html';
+            
+            // Usamos setTimeout para criar um pequeno atraso (1 segundo)
+            // Isso dá tempo para o usuário ler a mensagem antes da página mudar
+            setTimeout(() => {
+                // Esta é a linha que efetivamente redireciona o usuário para a página do dashboard
+                window.location.href = 'dashboard.html';
+            }, 2000); // 1000 milissegundos = 1 segundo
+            
         })
         .catch((error) => {
             // Trata os erros de login
